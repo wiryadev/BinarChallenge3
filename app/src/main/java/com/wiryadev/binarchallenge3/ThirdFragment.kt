@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.wiryadev.binarchallenge3.databinding.FragmentThirdBinding
 
@@ -27,12 +28,45 @@ class ThirdFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.biodata.tvName.text = args.name
+        val person = arguments?.getParcelable<Person>(EXTRA_PERSON)
+        val name: String
+
+        if (person != null) {
+            binding.biodata.run {
+                tvName.text = person.name
+                tvAge.text = person.age.toString()
+                tvAddress.text = person.address
+                tvJob.text = person.job
+            }
+            name = person.name
+        } else {
+            binding.biodata.run {
+                tvName.text = args.name
+                tvAge.visibility = View.GONE
+                tvAddress.visibility = View.GONE
+                tvJob.visibility = View.GONE
+            }
+            name = args.name
+        }
+
+        with(binding) {
+            button.setOnClickListener {
+                findNavController().navigate(
+                    ThirdFragmentDirections.actionThirdFragmentToFourthFragment(
+                        name = name
+                    )
+                )
+            }
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        const val EXTRA_PERSON = "extra_person"
     }
 
 }

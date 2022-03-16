@@ -6,5 +6,10 @@
     <string name="go_to_screen_3">Go To Screen 3</string>
     <string name="go_to_screen_4">Go To Screen 4</string>
     <string name="second_screen">Screen 2</string>
-    <string name="name">Name</string>
+    <string name="third_screen">Screen 3</string>
+    <string name="fourth_screen">Screen 4</string>
+    <string name="input_name_hint">Input your name</string>
+    <string name="input_age_hint">Input your age</string>
+    <string name="input_address_hint">Input your address</string>
+    <string name="input_job_hint">Input your job</string>
 </resources>

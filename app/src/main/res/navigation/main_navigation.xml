@@ -35,7 +35,9 @@
             app:argType="string" />
         <action
             android:id="@+id/action_thirdFragment_to_fourthFragment"
-            app:destination="@id/fourthFragment" />
+            app:destination="@id/fourthFragment"
+            app:popUpTo="@id/thirdFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -45,7 +47,12 @@
         tools:layout="@layout/fragment_fourth" >
         <action
             android:id="@+id/action_fourthFragment_to_thirdFragment"
+            app:popUpTo="@id/fourthFragment"
+            app:popUpToInclusive="true"
             app:destination="@id/thirdFragment" />
+        <argument
+            android:name="name"
+            app:argType="string" />
     </fragment>
 
 </navigation>
