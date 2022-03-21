@@ -12,4 +12,9 @@
     <string name="input_age_hint">Input your age</string>
     <string name="input_address_hint">Input your address</string>
     <string name="input_job_hint">Input your job</string>
+
+    <string name="your_name">Nama Anda %s</string>
+    <string name="your_age">Usia Anda, bernilai %s</string>
+    <string name="your_address">Alamat Anda %s</string>
+    <string name="your_job">Pekerjaan Anda %s</string>
 </resources>

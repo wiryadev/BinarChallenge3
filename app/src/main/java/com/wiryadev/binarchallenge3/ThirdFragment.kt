@@ -33,10 +33,10 @@ class ThirdFragment : Fragment() {
 
         if (person != null) {
             binding.biodata.run {
-                tvName.text = person.name
-                tvAge.text = person.age.toString()
-                tvAddress.text = person.address
-                tvJob.text = person.job
+                tvName.text = getString(R.string.your_name, person.name)
+                tvAge.text = person.age.isEvenOrOdd()
+                tvAddress.text = getString(R.string.your_address, person.address)
+                tvJob.text = getString(R.string.your_job, person.job)
             }
             name = person.name
         } else {
@@ -63,6 +63,16 @@ class ThirdFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun Int.isEvenOrOdd(): String {
+        return getString(
+            R.string.your_age, if (this % 2 == 0) {
+                "Genap"
+            } else {
+                "Ganjil"
+            }
+        )
     }
 
     companion object {
