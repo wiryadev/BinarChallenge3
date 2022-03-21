@@ -22,55 +22,100 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="48dp"
         android:ems="10"
         android:hint="@string/input_age_hint"
         android:importantForAutofill="no"
         android:inputType="number"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_address"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
 
     <EditText
         android:id="@+id/et_address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/input_address_hint"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/et_job"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_age" />
 
     <EditText
         android:id="@+id/et_job"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
         android:hint="@string/input_job_hint"
         android:importantForAutofill="no"
         android:inputType="text"
         android:minHeight="48dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_address" />
+
+    <EditText
+        android:id="@+id/et_mass"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/input_the_mass"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_job" />
+
+    <EditText
+        android:id="@+id/et_gravity"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/input_the_gravity"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_mass" />
+
+    <EditText
+        android:id="@+id/et_height"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="@string/input_the_height"
+        android:importantForAutofill="no"
+        android:inputType="number"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/et_gravity" />
 
     <Button
         android:id="@+id/button"
         style="@style/CustomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/go_to_screen_3"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="48dp"
+        android:text="@string/back_to_screen_3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/et_height" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
