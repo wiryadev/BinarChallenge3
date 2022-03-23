@@ -24,12 +24,21 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
-            findNavController().navigate(
-                SecondFragmentDirections.actionSecondFragmentToThirdFragment(
-                    name = binding.etName.text.toString()
-                )
-            )
+        with(binding) {
+            button.setOnClickListener {
+                when {
+                    etName.text.isNullOrEmpty() -> {
+                        etName.error = "Nama tidak boleh kosong"
+                    }
+                    else -> {
+                        findNavController().navigate(
+                            SecondFragmentDirections.actionSecondFragmentToThirdFragment(
+                                name = etName.text.toString()
+                            )
+                        )
+                    }
+                }
+            }
         }
     }
 
